@@ -63,6 +63,7 @@ public class DetailActivity extends AppCompatActivity {
     private void populateUI(Sandwich sandwich) {
         // download image and attached to the image view
         Picasso.with(this).load(sandwich.getImage()).noPlaceholder()
+                .error(R.drawable.unable_to_load_pic)
                 .into(mBinding.imageIv);
         // Set description text
         mBinding.descriptionTv.setText(sandwich.getDescription());

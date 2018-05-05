@@ -1,6 +1,7 @@
 package com.udacity.sandwichclub.utils;
 
 import android.content.Context;
+import android.text.TextUtils;
 
 import com.udacity.sandwichclub.R;
 
@@ -25,12 +26,7 @@ public class ListUtils {
             // default string
             return context.getResources().getString(R.string.not_available);
         }
-        for(int i=0; i<list.size(); i++) {
-            result = result.concat(list.get(i));
-            if(i < list.size() - 1) {
-                result = result.concat(", ");
-            }
-        }
+        result = TextUtils.join(", ", list);
         return result;
     }
 
